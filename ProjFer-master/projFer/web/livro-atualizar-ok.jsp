@@ -4,7 +4,7 @@
             
          <div>
              Registro alterado com sucesso.<br />
-             <a href="livros.jsp">Voltar para Listagem</a>
+             <a href="livro.jsp">Voltar para Listagem</a>
          </div>
     </body>
 </html>

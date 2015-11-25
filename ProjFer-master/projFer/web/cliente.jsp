@@ -7,7 +7,7 @@ ClienteDAO dao = new ClienteDAO();
 List<Cliente> lista;
 //Verificar se veio algo do filtro, 
 //se vier eu filtro pro nome
-//caso contrário eu trago todos os professores
+//caso contrário eu trago todos os clientes
 if(request.getParameter("txtFiltro")!= null && request.getParameter("txtFiltro")!= "")
 {
     String txtFiltro = request.getParameter("txtFiltro");
@@ -41,6 +41,17 @@ else
                            
                           
                         </tr>
+                        
+                         <tr>
+                            <td>560.408.650-15</td>
+                            <td>Henry Gomes de Carvalho</td>
+                            <td>Caldas Júnior</td>
+                            <td>5333125521</td>
+                            <td><a href="cliente-editar.jsp?cpf=560.408.650-15">Editar</a>
+                                <a href="cliente-excluir-ok.jsp?cpf=560.408.650-15">Excluir</a>
+                            </td>
+                            
+                        </tr>
                         <%
                         for(Cliente item:lista)
                         {
@@ -51,8 +62,8 @@ else
                             <td><%=item.getEndereco()%></td>
                             <td><%=item.getTelefone()%></td>
 
-                            <td><a href="alunos-atualizar.jsp?siape=<%=item.getCpf()%>">Editar</a>
-                                <a href="alunos-excluir-ok.jsp?siape=<%=item.getCpf()%>">Excluir</a>
+                            <td><a href="cliente-atualizar.jsp?cpf=<%=item.getCpf()%>">Editar</a>
+                                <a href="cliente-excluir-ok.jsp?cpf=<%=item.getCpf()%>">Excluir</a>
                             </td>
                             
                         </tr>

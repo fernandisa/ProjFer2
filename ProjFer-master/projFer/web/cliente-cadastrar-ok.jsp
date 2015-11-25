@@ -11,7 +11,7 @@
     
     if(request.getParameter("txtMatricula") == null || request.getParameter("txtNome")== null)
     {
-        response.sendRedirect("professores.jsp");
+        response.sendRedirect("cliente.jsp");
     }
     else
     {

@@ -20,24 +20,24 @@
     {
     
         String nome = request.getParameter("txtnome");
-        String isbn = request.getParameter("txtisbn");
-        Double preco = request.getParameter("txtpreco");
+        Long isbn = Long.parseLong(request.getParameter("txtisbn")); // conversao
+        BigDecimal preco = new BigDecimal(request.getParameter("txtpreco")); //conversao
         String autor = request.getParameter("txtautor");
 	String editora = request.getParameter("txteditora");
-        Integer numexemplares = request.getParameter("txtnumexemplares");
-
-        
-        
+        Integer numexemplares = Integer.parseInt(request.getParameter("txtnumexemplares")); //conversao
+  
         //Chamar a inclusão da DAO
         LivroDAO dao = new LivroDAO();
         Livro obj = new Livro();
         
         obj.setNome(nome);
-        
-        obj.setPreco(preco);
-	obj.setAutor(autor);
+        obj.setIsbn(isbn);
+        obj.setAutor(autor);
         obj.setEditora(editora);
-	obj.setNumexemplares(numexemplares);
+        obj.setNumexemplares(numexemplares);
+        obj.setPreco(preco);
+        
+        
        
 
         try
