@@ -102,7 +102,7 @@ else
       out.write("                            <th>Autor</th>\n");
       out.write("                            <th>Editora</th>\n");
       out.write("                            <th>NºExemplares</th>\n");
-      out.write("                            \n");
+      out.write("                             </tr>\n");
       out.write("                            ");
 
                         for(Livro item:lista)
@@ -110,68 +110,7 @@ else
                         
       out.write("\n");
       out.write("                            \n");
-      out.write("                        </tr>\n");
-      out.write("                        <tr>\n");
-      out.write("                            <td>978-85-98078-17-5</td>\n");
-      out.write("                            <td>A menina que roubava livros</td>\n");
-      out.write("                            <td>36,90</td>\n");
-      out.write("                            <td>Markus Zusak</td>\n");
-      out.write("                            <td>Intrínseca</td>\n");
-      out.write("                            <td>10</td>\n");
-      out.write("                            <td><a href=\"livro-editar.jsp?isbn=123\">Editar</a>\n");
-      out.write("                                <a href=\"livro-excluir-ok.jsp?isbn=978-85-98078-17-5\">Excluir</a>\n");
-      out.write("                            </td>\n");
-      out.write("                            \n");
-      out.write("                        </tr>\n");
-      out.write("                        <tr>\n");
-      out.write("                            <td>978-85-99296-61-5</td>\n");
-      out.write("                            <td>Praticamente Inofensiva (O Mochileiro das Galáxias)</td>\n");
-      out.write("                            <td>10,90</td>\n");
-      out.write("                            <td>Douglas Adams</td>\n");
-      out.write("                            <td>Arqueiro</td>\n");
-      out.write("                            <td>5</td>\n");
-      out.write("\t\t\t    <td><a href=\"livro-editar.jsp\">Editar</a>\n");
-      out.write("                                <a href=\"livro-excluir-ok.jsp?isbn=978-85-99296-61-5\">Excluir</a>\n");
-      out.write("                            </td>\n");
-      out.write("                            \n");
-      out.write("                        </tr>\n");
-      out.write("                        <tr>\n");
-      out.write("                            <td>85-7542-047-X</td>\n");
-      out.write("                            <td>Não leve a vida tão à sério</td>\n");
-      out.write("                            <td>14,90</td>\n");
-      out.write("                            <td>Hugh Prather</td>\n");
-      out.write("                            <td>Sextante</td>\n");
-      out.write("                            <td>2</td>\n");
-      out.write("                            <td><a href=\"livro-editar.jsp\">Editar</a>\n");
-      out.write("                                <a href=\"livro-excluir-ok.jsp?isbn=85-7542-047-X\">Excluir</a>\n");
-      out.write("                            </td>\n");
-      out.write("                            \n");
-      out.write("                        </tr>\n");
-      out.write("                        <tr>\n");
-      out.write("                            <td>978-85-422-0008-9</td>\n");
-      out.write("                            <td>O Colecionador de Lágrimas: Holocausto Nunca Mais</td>\n");
-      out.write("                            <td>20,00</td>\n");
-      out.write("                            <td>Augusto Cury</td>\n");
-      out.write("                            <td>Planeta do Brasil</td>\n");
-      out.write("                            <td>3</td>\n");
-      out.write("                            <td><a href=\"livro-editar.jsp\">Editar</a>\n");
-      out.write("                                <a href=\"livro-excluir.jsp?isbn=978-85-422-0008-9\">Excluir</a>\n");
-      out.write("                            </td>\n");
-      out.write("                            \n");
-      out.write("                        </tr>\n");
-      out.write("\n");
-      out.write("\t\t\t<tr>\n");
-      out.write("                            <td>978-85-8163-221-6</td>\n");
-      out.write("                            <td>Bruxos e Bruxas</td>\n");
-      out.write("                            <td>31,40</td>\n");
-      out.write("                            <td>James Patterson</td>\n");
-      out.write("                            <td>Novo Conceito</td>\n");
-      out.write("                            <td>4</td>\n");
-      out.write("                            <td><a href=\"livro-editar.jsp\">Editar</a>\n");
-      out.write("                                <a href=\"livro-excluir-ok.jsp?isbn=85-7542-047-X\">Excluir</a>\n");
-      out.write("                            </td>\n");
-      out.write("                            \n");
-      out.write("                        </tr>\n");
+      out.write("                       \n");
       out.write("                        \n");
       out.write("                         <tr>\n");
       out.write("                            <td>");
@@ -201,6 +140,10 @@ else
       out.write("                            </td>\n");
       out.write("                            \n");
       out.write("                        </tr>\n");
+      out.write("                        ");
+
+                        }
+                        
       out.write("\n");
       out.write("                    </table>\n");
       out.write("                    \n");
