@@ -4,6 +4,8 @@
 <%@include file="cabecalho.jsp"%>
 <%
 LivroDAO dao = new LivroDAO();
+
+
 List<Livro> lista;
 //Verificar se veio algo do filtro, 
 //se vier eu filtro pro nome
@@ -25,9 +27,13 @@ else
             
             <div>
                 +<a href="livro-cadastrar.jsp">Novo Livro</a><br />
-                <form>
-                    <input type="text" />
+                <form action="livro.jsp" method="post">
+                    <input type="text" name="txtFiltro" />
                     <input type="submit" value="Pesquisar"/><br />
+                </form>
+                
+                
+           
                     <table>
                         <tr>
                             <th>ISBN</th>
@@ -36,8 +42,8 @@ else
                             <th>Autor</th>
                             <th>Editora</th>
                             <th>NºExemplares</th>
-                             </tr>
-                            <%
+                        </tr>
+                        <%
                         for(Livro item:lista)
                         {
                         %>
@@ -61,7 +67,7 @@ else
                         %>
                     </table>
                     
-                </form>
+               
             </div>
         </div>
     </body>

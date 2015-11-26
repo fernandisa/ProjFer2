@@ -5,6 +5,7 @@
             <div>
                 
                 <form action="cliente-cadastrar-ok.jsp" method="post">
+                    
                     <label>Nome:</label><input type="text" name="txtnome" /><br />
                     <label>CPF</label><input type="text" name="txtcpf" /><br />
                     <label>Endereco</label><input type="text" name ="txtendereco" /><br />

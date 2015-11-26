@@ -9,7 +9,7 @@
     
     String msg="";
     
-    if(request.getParameter("txtMatricula") == null || request.getParameter("txtNome")== null)
+    if(request.getParameter("txtcpf") == null || request.getParameter("txtnome")== null)
     {
         response.sendRedirect("cliente.jsp");
     }
@@ -17,7 +17,7 @@
     {
     
         String nome = request.getParameter("txtnome");
-        String cpf = request.getParameter("txtcpf");
+        Long cpf = Long.parseLong(request.getParameter("txtcpf")); // conversao
         String end = request.getParameter("txtendereco");
         String tel = request.getParameter("txttelefone");
         
@@ -28,8 +28,9 @@
         
         obj.setNome(nome);
         obj.setEndereco(end);
-        
+        obj.setCpf(cpf);
         obj.setTelefone(tel);
+        
         try
         {
             dao.incluir(obj);
@@ -53,7 +54,7 @@ String cpf = request.getParameter("txtcpf");
          <h1 class="centro">Cadastro de Clientes</h1>
             
          <div>
-             Registro cadastrado com sucesso.<br />
+             <%=msg%>.<br />
              Nome:<%=nome%><br />
              CPF:<%=cpf%><br />
              <a href="cliente.jsp">Voltar para Listagem</a>

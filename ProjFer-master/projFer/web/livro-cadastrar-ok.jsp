@@ -63,7 +63,7 @@ String isbn = request.getParameter("txtisbn");
          <h1 class="centro">Cadastro de Livros</h1>
             
          <div>
-             Registro cadastrado com sucesso.<br />
+             <%=msg%>.<br />
              Nome:<%=nome%><br />
              ISBN:<%=isbn%><br />
              <a href="livro.jsp">Voltar para Listagem</a>

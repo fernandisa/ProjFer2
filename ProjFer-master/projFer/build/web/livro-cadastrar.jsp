@@ -4,7 +4,8 @@
             
             <div>
                 
-                <form action="livro-cadastrar-ok.jsp">
+                <form action="livro-cadastrar-ok.jsp" method = "post">
+             
                     <label>Nome:</label><input type="text" name="txtnome" /><br />
                     <label>ISBN</label><input type="text" name="txtisbn" /><br />
                     <label>Preco</label><input type="text" name="txtpreco" /><br />
