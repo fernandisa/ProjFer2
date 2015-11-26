@@ -6,7 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;
 import modelo.Cliente;
-import modelo.Livro;
+
 /**
  *
  * @author marcelosiedler
@@ -42,7 +42,7 @@ public class ClienteDAO {
       public List<Cliente> listar(String nome) throws Exception {
         //passar o parâmetro pra query
          TypedQuery<Cliente> query = 
-                 em.createNamedQuery("Professor.findByName", Cliente.class);
+                 em.createNamedQuery("Cliente.findByName", Cliente.class);
          
          //Seto o parâmetro
          query.setParameter("nome", '%' + nome + '%');

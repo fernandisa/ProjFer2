@@ -42,7 +42,7 @@ public class LivroDAO {
       public List<Livro> listar(String nome) throws Exception {
         //passar o parâmetro pra query
          TypedQuery<Livro> query = 
-                 em.createNamedQuery("Professor.findByName", Livro.class);
+                 em.createNamedQuery("Livro.findByName", Livro.class);
          
          //Seto o parâmetro
          query.setParameter("nome", '%' + nome + '%');
