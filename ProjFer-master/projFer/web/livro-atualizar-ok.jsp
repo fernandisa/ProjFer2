@@ -43,6 +43,15 @@ if(obj == null)
 //Atualizar as demais informações enviadas
 obj.setNome(nome);
 // chamo a atualizar
+
+obj.setAutor(autor);
+
+obj.setEditora(editora);
+
+obj.setNumexemplares(numexemplares);
+
+obj.setPreco(preco);
+
 dao.alterar(obj);
 
 

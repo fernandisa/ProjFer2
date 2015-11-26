@@ -16,13 +16,13 @@ if(request.getParameter("txtnome") == null || request.getParameter("txtcpf")==nu
 
 
 //Buscar o registro pela chave primária
-//Alterar os demais valores (nesse caso apenas Nome)
+//Alterar os demais valores (nesse caso nome,end, tel)
 //mandar alterar
 
 
 
 ClienteDAO dao = new ClienteDAO();
-//busquei o professor pelo siape (registro pela C.Primária)
+//busquei o cliente pelo CPF (registro pela C.Primária)
 
 Cliente obj = dao.buscarPorChavePrimaria(cpf);
 //Se não encontrou o registro volta pra listar 
@@ -37,6 +37,11 @@ if(obj == null)
 //Atualizar as demais informações enviadas
 obj.setNome(nome);
 // chamo a atualizar
+
+obj.setEndereco(end);
+
+obj.setTelefone(tel);
+
 dao.alterar(obj);
 
 

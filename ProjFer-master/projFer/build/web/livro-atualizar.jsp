@@ -8,8 +8,8 @@
       //para a execução aqui
       return;
     }
-     //Buscar o registro(professor) a partir da sua
-        //chave primária, nesse caso o SIAPE
+     //Buscar o registro(livro) a partir da sua
+        //chave primária, nesse caso o ISBN
         Long isbn = Long.parseLong(request.getParameter("isbn")); // conversao
         LivroDAO dao = new LivroDAO();
         Livro obj = dao.buscarPorChavePrimaria(isbn);

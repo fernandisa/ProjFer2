@@ -77,7 +77,7 @@ public class LivroDAO {
         }
     }
 
-    public Livro buscarPorChavePrimaria (String chave)
+    public Livro buscarPorChavePrimaria (Long chave)
     {
         return em.find(Livro.class,chave);
     }

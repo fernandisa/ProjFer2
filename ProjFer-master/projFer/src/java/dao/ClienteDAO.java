@@ -77,7 +77,7 @@ public class ClienteDAO {
         }
     }
 
-    public Cliente buscarPorChavePrimaria (String chave)
+    public Cliente buscarPorChavePrimaria (Long chave)
     {
         return em.find(Cliente.class,chave);
     }

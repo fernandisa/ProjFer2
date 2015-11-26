@@ -9,7 +9,7 @@
     }
     else
     {
-        Long cpf = Long.parseLong(request.getParameter("txtcpf")); // conversao
+        Long cpf = Long.parseLong(request.getParameter("cpf")); // conversao
         
         
         ClienteDAO dao = new ClienteDAO();
