@@ -39,6 +39,8 @@ public class ClienteDAO {
         return em.createNamedQuery("Cliente.findAll").getResultList();
     }
     
+   
+    
       public List<Cliente> listar(String nome) throws Exception {
         //passar o parâmetro pra query
          TypedQuery<Cliente> query = 
