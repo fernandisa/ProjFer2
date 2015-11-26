@@ -9,12 +9,12 @@
     }
     else
     {
+        
         Long cpf = Long.parseLong(request.getParameter("cpf")); // conversao
-        
-        
         ClienteDAO dao = new ClienteDAO();
         //buscar o registro pela chave primária
         Cliente obj = dao.buscarPorChavePrimaria(cpf);
+        
         // Excluir o cliente buscado
         if(obj!=null)
         {

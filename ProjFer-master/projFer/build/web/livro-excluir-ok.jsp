@@ -10,7 +10,7 @@
     else
     {
         
-        Long isbn = Long.parseLong(request.getParameter("txtisbn")); // conversao
+        Long isbn = Long.parseLong(request.getParameter("isbn")); // conversao
         
         LivroDAO dao = new LivroDAO();
         //buscar o registro pela chave primária
