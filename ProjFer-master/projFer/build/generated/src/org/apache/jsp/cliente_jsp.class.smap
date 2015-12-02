@@ -1,0 +1,24 @@
+SMAP
+cliente_jsp.java
+JSP
+*S JSP
+*F
++ 0 cliente.jsp
+cliente.jsp
++ 1 cabecalho.jsp
+cabecalho.jsp
+*L
+1,4:52
+1#1,15:55
+4#0:69
+6,16:71
+21,25:87
+46,3:113
+48,2:116
+50,4:118,3
+54,2:130
+56,2:132,3
+58,4:138
+62,2:143
+63,10:145
+*E
