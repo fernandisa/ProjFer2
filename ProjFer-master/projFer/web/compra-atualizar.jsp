@@ -29,15 +29,16 @@
 
 %>
         <div>
-            <h1 class="centro">Atualização de Clientes</h1>
+            <h1 class="centro">Atualização de Compras</h1>
             
             <div>
                 
-                <form action="cliente-atualizar-ok.jsp" method="post">
-                    <label>CPF:</label><input type="text" name="txtcpf" value="<%=obj.getCpf()%>" readonly="readonly"/><br />
+                <form action="compra-atualizar-ok.jsp" method="post">
+                    <label>Cupom Fiscal:</label><input type="text" name="txtIdcompra" value="<%=obj.getIdcompra()%>" readonly="readonly"/><br />
                    <%-- o readonly n permite ao usuario tocar nesse campo --%>
-                    <label>Nome:</label><input type="text" name="txtnome" value="<%=obj.getNome()%>" /><br />
-                    <label>Endereco:</label><input type="text" name="txtendereco" value="<%=obj.getEndereco()%>" /><br />
+                    <label>Preco da venda:</label><input type="text" name="txtPrecovenda" value="<%=obj.getPrecovenda()%>" /><br />
+                <label>Data Hora:</label><input type="date" name ="txtDatahora" value="<%=obj.getDatahora()%>" /><br />
+                   
                     <label>Telefone:</label><input type="text" name="txttelefone" value="<%=obj.getTelefone()%>" /><br />
                     
                     <input type="submit" value="Atualizar" />
