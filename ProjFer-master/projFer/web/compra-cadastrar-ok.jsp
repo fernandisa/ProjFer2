@@ -15,7 +15,7 @@
     //System.out.println();
     String msg="";
     
-    if(request.getParameter("txtCpf") == null || request.getParameter("txtIsbn")== null || request.getParameter("txtIdcompra")== null);
+    if(request.getParameter("txtCpf") == null || request.getParameter("txtIsbn")== null || request.getParameter("txtIdcompra")== null)
     {
         response.sendRedirect("compra.jsp");
     }
@@ -46,7 +46,7 @@
             Date d = sf.parse(data);
      
             
-            obj.setDatahora(datahora);
+            obj.setDatahora(d);
         
         try
         {
