@@ -10,6 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;
 import modelo.Compra;
+import modelo.Livro;
 
 /**
  *
@@ -79,7 +80,11 @@ public class CompraDAO {
             em.close();
         }
     }
-
+public Compra buscarPorChavePrimaria (Long chave)
+    {
+        return em.find(Compra.class,chave);
+    }
+    
     public void fechaEmf() {
         Conexao.closeConexao();
     }
