@@ -37,8 +37,9 @@
                     <label>Cupom Fiscal:</label><input type="text" name="txtIdcompra" value="<%=obj.getIdcompra()%>" readonly="readonly"/><br />
                    <%-- o readonly n permite ao usuario tocar nesse campo --%>
                     <label>Preco da venda:</label><input type="text" name="txtPrecovenda" value="<%=obj.getPrecovenda()%>" /><br />
-                <label>Data Hora:</label><input type="date" name ="txtDatahora" value="<%=obj.getDatahora()%>" /><br />
-                   
+                <label>Data Hora:</label><input type="date" name ="txtDatahora" value='<%=obj.getDatahora()%>' /><br />
+                
+     
                     <label>Telefone:</label><input type="text" name="txttelefone" value="<%=obj.getTelefone()%>" /><br />
                     
                     <input type="submit" value="Atualizar" />
