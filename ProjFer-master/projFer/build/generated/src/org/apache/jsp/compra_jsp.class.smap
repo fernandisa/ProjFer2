@@ -1,10 +1,10 @@
 SMAP
-cliente_jsp.java
+compra_jsp.java
 JSP
 *S JSP
 *F
-+ 0 cliente.jsp
-cliente.jsp
++ 0 compra.jsp
+compra.jsp
 + 1 cabecalho.jsp
 cabecalho.jsp
 *L
@@ -15,10 +15,10 @@ cabecalho.jsp
 21,25:87
 46,3:113
 48,2:116
-50,4:118,3
-54,2:130
-56,2:132,3
-58,4:138
-62,2:143
-63,10:145
+50,6:118,3
+56,2:136
+58,2:138,3
+60,4:144
+64,2:149
+65,11:151
 *E

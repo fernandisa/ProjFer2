@@ -10,7 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;
 import modelo.Compra;
-import modelo.Livro;
+
 
 /**
  *
@@ -43,13 +43,13 @@ public class CompraDAO {
     public List<Compra> listar() throws Exception {
         return em.createNamedQuery("Compra.findAll").getResultList();
     }
-    public List<Compra> listar(String nome) throws Exception {
+    public List<Compra> listar(Long idcompra) throws Exception {
         //passar o parâmetro pra query
          TypedQuery<Compra> query = 
-                 em.createNamedQuery("Compra.findByName", Compra.class);
+                 em.createNamedQuery("Compra.findByCod", Compra.class); // mudei para buscar pela chave primaria da tabela compra
          
          //Seto o parâmetro
-         query.setParameter("nome", '%' + nome + '%');
+         query.setParameter("idcompra", '%' + idcompra + '%');
          //retorno minha lista
          return query.getResultList();
     }

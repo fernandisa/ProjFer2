@@ -11,12 +11,12 @@ List<Compra> lista;
 if(request.getParameter("txtFiltro")!= null && request.getParameter("txtFiltro")!= "")
 {
     String txtFiltro = request.getParameter("txtFiltro");
-     lista = dao.listar(txtFiltro);
+     lista = dao.listar(Long.parseLong(txtFiltro)); // como a chave primaria é long, tive q converter pois geralmente era string
   
 }
 else
 {
-    lista = dao.listar();
+    lista = dao.listar(); 
 }
 %>
 

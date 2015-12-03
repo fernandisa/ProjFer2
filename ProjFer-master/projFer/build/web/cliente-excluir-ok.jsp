@@ -1,3 +1,4 @@
+
 <%@page import="modelo.Cliente"%>
 <%@page import="dao.ClienteDAO"%>
 <%@include file="cabecalho.jsp"%>
@@ -10,7 +11,9 @@
     else
     {
         
+        
         Long cpf = Long.parseLong(request.getParameter("cpf")); // conversao
+        
         ClienteDAO dao = new ClienteDAO();
         //buscar o registro pela chave primária
         Cliente obj = dao.buscarPorChavePrimaria(cpf);

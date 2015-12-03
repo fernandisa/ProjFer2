@@ -2,7 +2,7 @@
 <%@page import="dao.ClienteDAO"%>
 <%@include file="cabecalho.jsp"%>
 <%
-if(request.getParameter("txtnome") == null || request.getParameter("txtcpf")==null)
+if(request.getParameter("txtIdcompra") == null || request.getParameter("txtIsbn")==null || request.getParameter("txtIdcpf")==null)
 {
     response.sendRedirect("cliente.jsp");
     return;

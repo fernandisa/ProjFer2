@@ -1,22 +1,23 @@
-
-<%@page import="modelo.Cliente"%>
-<%@page import="dao.ClienteDAO"%>
+<%@page import="modelo.Compra"%>
+<%@page import="dao.CompraDAO"%>
 <%@include file="cabecalho.jsp"%>
 <%
     String msg = "";
-    if(request.getParameter("cpf")==null)
+    if(request.getParameter("Idcompra")==null )
     {
-        response.sendRedirect("cliente.jsp");
+        response.sendRedirect("compra.jsp");
     }
     else
     {
+        Long idcompra = Long.parseLong(request.getParameter("Idcompra"));
         
         
-        Long cpf = Long.parseLong(request.getParameter("cpf")); // conversao
-        
-        ClienteDAO dao = new ClienteDAO();
+        CompraDAO dao = new CompraDAO();
         //buscar o registro pela chave primária
-        Cliente obj = dao.buscarPorChavePrimaria(cpf);
+        Compra obj = dao.buscarPorChavePrimaria(idcompra);
+        
+        //buscar o registro pela chave primária
+        
         
         // Excluir o cliente buscado
         if(obj!=null)
@@ -31,11 +32,11 @@
         
     }
 %>
-         <h1 class="centro">Exclusão de Clientes</h1>
+         <h1 class="centro">Exclusão de Compras</h1>
             
          <div>
              <%=msg%><br />
-             <a href="cliente.jsp">Voltar para Listagem</a>
+             <a href="compra.jsp">Voltar para Listagem</a>
          </div>
     </body>
 </html>

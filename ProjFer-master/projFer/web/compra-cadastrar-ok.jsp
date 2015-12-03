@@ -22,8 +22,8 @@
     else
     {
             String idcompra = request.getParameter("txtIdcompra");
-            Long cpf = Long.parseLong(request.getParameter("txtCpf")); // conversao
-            String isbn = request.getParameter("txtIsbn");
+            Long cpf = Long.parseLong(request.getParameter("selCpf")); // conversao
+            String isbn = request.getParameter("selIsbn");
             String precovenda = request.getParameter("txtPrecovenda");
             
             String data = request.getParameter("txtDatahora");
@@ -37,17 +37,13 @@
             
             objCliente.setCpf(cpf);
             objLivro.setIsbn(Long.parseLong(isbn));
-            
-           
-            
-            
  
             SimpleDateFormat sf = new SimpleDateFormat("dd/MM/yyyy");
             Date d = sf.parse(data);
-     
-            
+        
             obj.setDatahora(d);
         
+            dao.incluir(obj);
         try
         {
             dao.incluir(obj);

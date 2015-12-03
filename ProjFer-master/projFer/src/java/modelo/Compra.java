@@ -28,6 +28,7 @@ import javax.persistence.TemporalType;
 @Table(name = "compra")
 @NamedQueries({
     @NamedQuery(name = "Compra.findAll", query = "SELECT c FROM Compra c")})
+@NamedQuery(name = "Compra.findByCod", query = "SELECT c FROM Compra c where c.idcompra like :idcompra") // encontrar pelo codigo
 public class Compra implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
