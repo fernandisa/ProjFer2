@@ -76,12 +76,12 @@ List<Compra> lista;
 if(request.getParameter("txtFiltro")!= null && request.getParameter("txtFiltro")!= "")
 {
     String txtFiltro = request.getParameter("txtFiltro");
-     lista = dao.listar(Long.parseLong(txtFiltro));
+     lista = dao.listar(Long.parseLong(txtFiltro)); // como a chave primaria é long, tive q converter pois geralmente era string
   
 }
 else
 {
-    lista = dao.listar();
+    lista = dao.listar(); 
 }
 
       out.write("\n");
@@ -103,7 +103,7 @@ else
       out.write("                            <tr>\n");
       out.write("                                <th>Cupom Fiscal</th>\n");
       out.write("                                <th>Preco da Venda</th>\n");
-      out.write("                                <th>DataHora</th>\n");
+      out.write("                                <th>Data</th>\n");
       out.write("                                <th>Quantidade</th>\n");
       out.write("                                <th>CPF do comprador</th>\n");
       out.write("                                <th>ISBN do livro</th>\n");
@@ -122,7 +122,7 @@ else
       out.print(item.getPrecovenda());
       out.write("</td>\n");
       out.write("                                <td>");
-      out.print(item.getDatahora());
+      out.print(item.getData());
       out.write("</td>\n");
       out.write("                                <td>");
       out.print(item.getQntd());

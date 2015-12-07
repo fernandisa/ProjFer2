@@ -39,9 +39,9 @@ public class Compra implements Serializable {
     @Column(name = "precovenda")
     private BigDecimal precovenda;
     @Basic(optional = false)
-    @Column(name = "datahora")
+    @Column(name = "data")
     @Temporal(TemporalType.DATE)
-    private Date datahora;
+    private Date data;
     @Basic(optional = false)
     @Column(name = "qntd")
     private int qntd;
@@ -59,9 +59,9 @@ public class Compra implements Serializable {
         this.idcompra = idcompra;
     }
 
-    public Compra(Long idcompra, Date datahora, int qntd) {
+    public Compra(Long idcompra, Date data, int qntd) {
         this.idcompra = idcompra;
-        this.datahora = datahora;
+        this.data = data;
         this.qntd = qntd;
     }
 
@@ -81,12 +81,12 @@ public class Compra implements Serializable {
         this.precovenda = precovenda;
     }
 
-    public Date getDatahora() {
-        return datahora;
+    public Date getData() {
+        return data;
     }
 
-    public void setDatahora(Date datahora) {
-        this.datahora = datahora;
+    public void setData(Date data) {
+        this.data = data;
     }
 
     public int getQntd() {

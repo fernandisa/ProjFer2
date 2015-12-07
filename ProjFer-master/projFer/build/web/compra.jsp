@@ -37,7 +37,7 @@ else
                             <tr>
                                 <th>Cupom Fiscal</th>
                                 <th>Preco da Venda</th>
-                                <th>DataHora</th>
+                                <th>Data</th>
                                 <th>Quantidade</th>
                                 <th>CPF do comprador</th>
                                 <th>ISBN do livro</th>
@@ -49,7 +49,7 @@ else
                             <tr>
                                 <td><%=item.getIdcompra()%></td>
                                 <td><%=item.getPrecovenda()%></td>
-                                <td><%=item.getDatahora()%></td>
+                                <td><%=item.getData()%></td>
                                 <td><%=item.getQntd()%></td>
                                 <td><%=item.getCpf()%></td>
                                 <td><%=item.getIsbn()%></td>

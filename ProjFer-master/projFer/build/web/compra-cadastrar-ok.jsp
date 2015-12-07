@@ -26,7 +26,7 @@
             String isbn = request.getParameter("selIsbn");
             String precovenda = request.getParameter("txtPrecovenda");
             
-            String data = request.getParameter("txtDatahora");
+            String data = request.getParameter("txtData");
             Integer qntd = Integer.parseInt(request.getParameter("txtQntd")); // conversao
         //Chamar a inclusão da DAO
             CompraDAO dao = new CompraDAO();
@@ -41,7 +41,7 @@
             SimpleDateFormat sf = new SimpleDateFormat("dd/MM/yyyy");
             Date d = sf.parse(data);
         
-            obj.setDatahora(d);
+            obj.setData(d);
         
             dao.incluir(obj);
         try

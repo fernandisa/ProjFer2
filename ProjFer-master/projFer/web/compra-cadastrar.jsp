@@ -25,7 +25,7 @@
                     
                     <label>Cupom Fiscal:</label><input type="text" name="txtIdcompra" /><br />
                     <label>Preco da Venda</label><input type="text" name="txtPrecovenda" /><br />
-                    <label>Data Hora</label><input type="date" name ="txtDatahora" /><br />
+                    <label>Data Hora</label><input type="date" name ="txtData" /><br />
                     <label>Quantidade</label><input type="text" name="txtQntd" /><br />
                     
                     

@@ -19,7 +19,7 @@ if(request.getParameter("txtIdcompra") == null || request.getParameter("txtCpf")
             String isbn = request.getParameter("txtIsbn");
             BigDecimal preco = new BigDecimal(request.getParameter("txtPrecovenda"));
             
-            String data = request.getParameter("txtDatahora");
+            String data = request.getParameter("txtData");
             Integer qntd = Integer.parseInt(request.getParameter("txtQntd")); // conversao
 
 //Buscar o registro pela chave primária
@@ -52,7 +52,7 @@ if(request.getParameter("txtIdcompra") == null || request.getParameter("txtCpf")
             SimpleDateFormat sf = new SimpleDateFormat("dd/MM/yyyy");
             Date d = sf.parse(data);
         
-            obj.setDatahora(d);
+            obj.setData(d);
             obj.setPrecovenda(preco);
             obj.setIdcompra(idcompra);
 
