@@ -49,16 +49,17 @@
             obj.setPrecovenda(precovenda);
             obj.setQntd(qntd);
          
-            dao.incluir(obj);
-        try
-        {
-            dao.incluir(obj);
-            msg = "Registro cadastrado com sucesso";
-        }
-        catch(Exception ex)
-        {
-            msg = "Erro ao cadastrar registro";
-        }
+            //dao.incluir(obj);
+        
+            try
+            {   
+                dao.incluir(obj);
+                msg = "Registro cadastrado com sucesso";
+            }
+            catch(Exception ex)
+            {
+                msg = "Erro ao cadastrar registro";
+            }
         
     }
     
@@ -68,8 +69,8 @@
 //txtnome é o NAME que eu coloquei no input na tela 
 //anterior
 String idcompra = request.getParameter("txtIdcompra");
-Long cpf = Long.parseLong(request.getParameter("txtCpf")); // conversao
-String isbn = request.getParameter("txtIsbn");
+Long cpf = Long.parseLong(request.getParameter("selCpf")); // conversao
+String isbn = request.getParameter("selIsbn");
 %>
          <h1 class="centro">Compra</h1>
             

@@ -8,15 +8,15 @@
 <%@page import="dao.ClienteDAO"%>
 <%@include file="cabecalho.jsp"%>
 <%
-if(request.getParameter("txtIdcompra") == null || request.getParameter("txtCpf")==null ||request.getParameter("txtIsbn")==null )
+if(request.getParameter("txtIdcompra") == null || request.getParameter("selCpf")==null ||request.getParameter("selIsbn")==null )
 {
     response.sendRedirect("compra.jsp");
     return;
 }
 
             Long idcompra = Long.parseLong(request.getParameter("txtIdcompra"));
-            Long cpf = Long.parseLong(request.getParameter("txtCpf")); // conversao
-            String isbn = request.getParameter("txtIsbn");
+            Long cpf = Long.parseLong(request.getParameter("selCpf")); // conversao
+            String isbn = request.getParameter("selIsbn");
             BigDecimal preco = new BigDecimal(request.getParameter("txtPrecovenda"));
             
             String data = request.getParameter("txtData");
@@ -54,7 +54,7 @@ if(request.getParameter("txtIdcompra") == null || request.getParameter("txtCpf")
         
             obj.setData(d);
             obj.setPrecovenda(preco);
-            obj.setIdcompra(idcompra);
+            obj.setQntd(qntd);
 
             dao.alterar(obj);
 
