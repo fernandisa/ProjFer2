@@ -12,7 +12,7 @@
     List<Cliente> cLista = cdao.listar ();
     
     List<Livro> lLista = ldao.listar ();
-    
+   
     
     
 %>
@@ -36,7 +36,8 @@
                         for (Cliente citem: cLista)
                         {
                         %>
-                        <option value="" ></option>
+                        <option value="<%=citem.getCpf()%>" ><%=citem%> </option>  
+                        
                         <%
                         }
                         %>
@@ -46,12 +47,12 @@
                     <label>ISBN do livro</label>
                     <select name="selIsbn">
                         <option value="">Selecione </option>
-                        <option value ="" >Selecione </option>
+                        
                         <%
                         for (Livro litem: lLista)
                         {
                         %>
-                        <option value="" ></option>
+                        <option value="<%=litem.getIsbn()%>" ><%=litem%> ></option>
                         <%
                         }
                         %>

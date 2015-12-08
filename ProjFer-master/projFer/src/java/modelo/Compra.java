@@ -28,7 +28,7 @@ import javax.persistence.TemporalType;
 @Table(name = "compra")
 @NamedQueries({
     @NamedQuery(name = "Compra.findAll", query = "SELECT c FROM Compra c")})
-@NamedQuery(name = "Compra.findByCod", query = "SELECT c FROM Compra c where c.idcompra like :idcompra") // encontrar pelo codigo
+@NamedQuery(name = "Compra.findByCod", query = "SELECT c FROM Compra c where c.idcompra = :idcompra") // encontrar pelo codigo
 public class Compra implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
@@ -101,16 +101,16 @@ public class Compra implements Serializable {
         return cpf;
     }
 
-    public void setCpf(Cliente cpf) {
-        this.cpf = cpf;
+    public void setCliente(Cliente cliente) {
+        this.cpf = cliente;
     }
 
-    public Livro getIsbn() {
+    public Livro getLivro() {
         return isbn;
     }
 
-    public void setIsbn(Livro isbn) {
-        this.isbn = isbn;
+    public void setLivro(Livro livro) {
+        this.isbn = livro;
     }
 
     @Override
@@ -135,7 +135,7 @@ public class Compra implements Serializable {
 
     @Override
     public String toString() {
-        return "modelo.Compra[ idcompra=" + idcompra + " ]";
+        return "Id da compra: " + idcompra;
     }
     
 }

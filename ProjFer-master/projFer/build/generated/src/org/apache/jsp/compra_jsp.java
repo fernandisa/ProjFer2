@@ -3,6 +3,7 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.text.SimpleDateFormat;
 import modelo.Compra;
 import java.util.List;
 import dao.CompraDAO;
@@ -49,6 +50,7 @@ public final class compra_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("\n");
       out.write("\n");
       out.write("\n");
       out.write("\n");
@@ -110,6 +112,7 @@ else
       out.write("                       </tr>\n");
       out.write("                            ");
 
+                            SimpleDateFormat sf = new SimpleDateFormat("dd-MM-yyyy");
                             for(Compra item:lista)
                             {
                             
@@ -122,7 +125,7 @@ else
       out.print(item.getPrecovenda());
       out.write("</td>\n");
       out.write("                                <td>");
-      out.print(item.getData());
+      out.print(sf.format(item.getData()));
       out.write("</td>\n");
       out.write("                                <td>");
       out.print(item.getQntd());
@@ -131,7 +134,7 @@ else
       out.print(item.getCpf());
       out.write("</td>\n");
       out.write("                                <td>");
-      out.print(item.getIsbn());
+      out.print(item.getLivro());
       out.write("</td>\n");
       out.write("\n");
       out.write("                                <td>\n");

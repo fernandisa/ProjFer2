@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="modelo.Compra"%>
 <%@page import="java.util.List"%>
 <%@page import="dao.CompraDAO"%>
@@ -43,16 +44,17 @@ else
                                 <th>ISBN do livro</th>
                        </tr>
                             <%
+                            SimpleDateFormat sf = new SimpleDateFormat("dd-MM-yyyy");
                             for(Compra item:lista)
                             {
                             %>
                             <tr>
                                 <td><%=item.getIdcompra()%></td>
                                 <td><%=item.getPrecovenda()%></td>
-                                <td><%=item.getData()%></td>
+                                <td><%=sf.format(item.getData())%></td>
                                 <td><%=item.getQntd()%></td>
                                 <td><%=item.getCpf()%></td>
-                                <td><%=item.getIsbn()%></td>
+                                <td><%=item.getLivro()%></td>
 
                                 <td>
                                     <a href="compra-atualizar.jsp?cpf=<%=item.getIdcompra()%>">Editar</a>

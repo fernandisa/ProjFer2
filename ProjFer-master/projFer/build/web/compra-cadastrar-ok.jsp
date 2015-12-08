@@ -1,3 +1,4 @@
+<%@page import="java.math.BigDecimal"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="modelo.Cliente"%>
@@ -15,7 +16,7 @@
     //System.out.println();
     String msg="";
     
-    if(request.getParameter("txtCpf") == null || request.getParameter("txtIsbn")== null || request.getParameter("txtIdcompra")== null)
+    if(request.getParameter("selCpf") == null || request.getParameter("selIsbn")== null || request.getParameter("txtIdcompra")== null)
     {
         response.sendRedirect("compra.jsp");
     }
@@ -24,11 +25,11 @@
             String idcompra = request.getParameter("txtIdcompra");
             Long cpf = Long.parseLong(request.getParameter("selCpf")); // conversao
             String isbn = request.getParameter("selIsbn");
-            String precovenda = request.getParameter("txtPrecovenda");
-            
+            BigDecimal precovenda = new BigDecimal(request.getParameter("txtPrecovenda")); //conversao
             String data = request.getParameter("txtData");
             Integer qntd = Integer.parseInt(request.getParameter("txtQntd")); // conversao
-        //Chamar a inclusão da DAO
+            
+            //Chamar a inclusão da DAO
             CompraDAO dao = new CompraDAO();
             Compra obj = new Compra();
         
@@ -38,11 +39,16 @@
             objCliente.setCpf(cpf);
             objLivro.setIsbn(Long.parseLong(isbn));
  
-            SimpleDateFormat sf = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
             Date d = sf.parse(data);
-        
             obj.setData(d);
-        
+            
+            obj.setCliente(objCliente);
+            obj.setLivro(objLivro);
+            obj.setIdcompra(Long.parseLong(idcompra));
+            obj.setPrecovenda(precovenda);
+            obj.setQntd(qntd);
+         
             dao.incluir(obj);
         try
         {

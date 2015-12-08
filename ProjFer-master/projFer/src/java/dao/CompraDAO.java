@@ -48,8 +48,9 @@ public class CompraDAO {
          TypedQuery<Compra> query = 
                  em.createNamedQuery("Compra.findByCod", Compra.class); // mudei para buscar pela chave primaria da tabela compra
          
+         
          //Seto o parâmetro
-         query.setParameter("idcompra", '%' + idcompra + '%');
+         query.setParameter("idcompra", idcompra );
          //retorno minha lista
          return query.getResultList();
     }

@@ -145,7 +145,7 @@ public class Livro implements Serializable {
 
     @Override
     public String toString() {
-        return "modelo.Livro[ isbn=" + isbn + " ]";
+        return "Nome do livro: " + nome + "\nISBN: " + isbn;
     }
     
 }

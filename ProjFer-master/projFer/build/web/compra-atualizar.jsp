@@ -40,7 +40,7 @@
                    <%-- o readonly n permite ao usuario tocar nesse campo --%>
                     <label>Preco da venda:</label><input type="text" name="txtPrecovenda" value="<%=obj.getPrecovenda()%>" /><br />
                     <label>Data:</label><input type="date" name ="txtData" value='<%=obj.getData()%>' /><br />
-                
+                 
      
                     <label>Quantidade de livros:</label><input type="text" name="txtQntd" value="<%=obj.getQntd()%>" /><br />
                     <label> CPF do cliente</label><input type="text" name="txtCpf" value="<%=obj.getCpf()%>" /> <br />
