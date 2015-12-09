@@ -12,7 +12,7 @@ List<Compra> lista;
 if(request.getParameter("txtFiltro")!= null && request.getParameter("txtFiltro")!= "")
 {
     String txtFiltro = request.getParameter("txtFiltro");
-     lista = dao.listar(Long.parseLong(txtFiltro)); // como a chave primaria é long, tive q converter pois geralmente era string
+    lista = dao.listar(Long.parseLong(txtFiltro)); // como a chave primaria é long, tive q converter pois geralmente era string
   
 }
 else
@@ -42,13 +42,14 @@ else
                                 <th>Quantidade</th>
                                 <th>CPF do comprador</th>
                                 <th>ISBN do livro</th>
-                       </tr>
-                            <%
-                            SimpleDateFormat sf = new SimpleDateFormat("dd-MM-yyyy");
-                            for(Compra item:lista)
-                            {
-                            %>
-                            <tr>
+                           </tr>
+                           <%
+                           SimpleDateFormat sf = new SimpleDateFormat("dd-MM-yyyy");
+                           for(Compra item:lista)
+                           {
+                               
+                           %>
+                           <tr>
                                 <td><%=item.getIdcompra()%></td>
                                 <td><%=item.getPrecovenda()%></td>
                                 <td><%=sf.format(item.getData())%></td>

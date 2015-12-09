@@ -3,12 +3,12 @@
 <%@include file="cabecalho.jsp"%>
 <%
     
-    if(request.getParameter("Idcompra")==null )
+    if(request.getParameter("idcompra")==null )
     {
         response.sendRedirect("compra.jsp");
 	return;
     }
-    Long idcompra = Long.parseLong(request.getParameter("Idcompra"));
+    Long idcompra = Long.parseLong(request.getParameter("idcompra"));
     CompraDAO dao = new CompraDAO();
         //buscar o registro pela chave primária
     Compra obj = dao.buscarPorChavePrimaria(idcompra);
