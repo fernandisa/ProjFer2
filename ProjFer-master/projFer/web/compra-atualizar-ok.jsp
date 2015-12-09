@@ -49,10 +49,13 @@ if(request.getParameter("txtIdcompra") == null || request.getParameter("selCpf")
             livro.setIsbn(Long.parseLong(isbn));
             // chamo a atualizar
 
-            SimpleDateFormat sf = new SimpleDateFormat("dd/MM/yyyy");
+            
+            
+            
+            SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd");
             Date d = sf.parse(data);
-        
             obj.setData(d);
+            
             obj.setPrecovenda(preco);
             obj.setQntd(qntd);
 

@@ -1,3 +1,6 @@
+<%@page import="dao.LivroDAO"%>
+<%@page import="modelo.Livro"%>
+<%@page import="java.util.List"%>
 <%@page import="modelo.Compra"%>
 <%@page import="dao.CompraDAO"%>
 <%@page import="dao.ClienteDAO"%>
@@ -5,7 +8,6 @@
 <%@include file="cabecalho.jsp"%>
 <%
     
-
     if(request.getParameter("Idcompra") == null)
     {
       response.sendRedirect("compra.jsp"); 
@@ -24,11 +26,15 @@
             return;
             
         }
-        
-
-
+        //Listagem de livros
+    LivroDAO lDAO = new LivroDAO();
+    List<Livro> lLista = lDAO.listar();
+//listagem de clientes
     
-
+    ClienteDAO cDAO = new ClienteDAO();
+   
+    List<Cliente> cLista = cDAO.listar();
+    
 %>
         <div>
             <h1 class="centro">Atualização de Compras</h1>
@@ -39,18 +45,63 @@
                     <label>Cupom Fiscal:</label><input type="text" name="txtIdcompra" value="<%=obj.getIdcompra()%>" readonly="readonly"/><br />
                    <%-- o readonly n permite ao usuario tocar nesse campo --%>
                     <label>Preco da venda:</label><input type="text" name="txtPrecovenda" value="<%=obj.getPrecovenda()%>" /><br />
-                    <label>Data:</label><input type="date" name ="txtData" value="<%=obj.getData()%>" /><br />
+                    <label>Data Hora</label><input type="date" name ="txtData" /><br />
                  
      
                     <label>Quantidade de livros:</label><input type="text" name="txtQntd" value="<%=obj.getQntd()%>" /><br />
-                    <label> CPF do cliente</label><input type="text" name="txtCpf" value="<%=obj.getCpf()%>" /> <br />
-                    <label> ISBN do livro</label><input type="text" name="txtIsbn" value="<%=obj.getLivro()%>" /> <br />
+                               <label>CPF do cliente</label>
+                    <select name="selCpf">
+                        <option value ="" >Selecione </option>
+                        <%
+                           //percorrer minha lista de clientes
+                        String selected = "";
+                        for (Cliente c: cLista)
+                        {
+                            
+                            if(c.getCpf() == obj.getCpf().getCpf())
+                            {
+                                selected = "selected";
+                            }
+                        %>
+                        <option value="<%=c.getCpf()%>" ><%=c%> </option>  
+                        <%
+                        selected = "";
+                        }
+                        
+                        %>
+                    </select>
+                    <br />
+                    
+                    <label>ISBN do livro</label>
+                    <select name="selIsbn">
+                        <option value="">Selecione </option>
+                        <%
+                        selected ="";
+                        //percorrer minha lista de livros
+                        for (Livro l: lLista)
+                        {
+                            if(l.getIsbn() == obj.getLivro().getIsbn())
+                            {
+                                selected = "selected";
+                            }
+
+                        %>
+                        <option value="<%=l.getIsbn()%>" ><%=l%> ></option>
+                        <%
+                        selected = "";
+                        }
+                        
+                        %>
+                    </select>
+                    <br />
+                    
+                    
                     <input type="submit" value="Atualizar" />
                 </form>
             </div>
         </div>
 
 
-        
+
     </body>
 </html>

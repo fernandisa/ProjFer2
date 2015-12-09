@@ -57,8 +57,8 @@ else
                                 <td><%=item.getLivro()%></td>
 
                                 <td>
-                                    <a href="compra-atualizar.jsp?cpf=<%=item.getIdcompra()%>">Editar</a>
-                                    <a href="compra-excluir-ok.jsp?cpf=<%=item.getIdcompra()%>">Excluir</a>
+                                    <a href="compra-atualizar.jsp?idcompra=<%=item.getIdcompra()%>">Editar</a>
+                                    <a href="compra-excluir-ok.jsp?idcompra=<%=item.getIdcompra()%>">Excluir</a>
                                 </td>
                            
                             </tr>

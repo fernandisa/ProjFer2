@@ -138,10 +138,10 @@ else
       out.write("</td>\n");
       out.write("\n");
       out.write("                                <td>\n");
-      out.write("                                    <a href=\"compra-atualizar.jsp?cpf=");
+      out.write("                                    <a href=\"compra-atualizar.jsp?idcompra=");
       out.print(item.getIdcompra());
       out.write("\">Editar</a>\n");
-      out.write("                                    <a href=\"compra-excluir-ok.jsp?cpf=");
+      out.write("                                    <a href=\"compra-excluir-ok.jsp?idcompra=");
       out.print(item.getIdcompra());
       out.write("\">Excluir</a>\n");
       out.write("                                </td>\n");

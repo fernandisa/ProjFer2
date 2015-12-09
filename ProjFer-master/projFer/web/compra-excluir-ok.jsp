@@ -6,13 +6,10 @@
     if(request.getParameter("Idcompra")==null )
     {
         response.sendRedirect("compra.jsp");
+	return;
     }
-    else
-    {
         Long idcompra = Long.parseLong(request.getParameter("Idcompra"));
-        
-        
-        CompraDAO dao = new CompraDAO();
+         CompraDAO dao = new CompraDAO();
         //buscar o registro pela chave primária
         Compra obj = dao.buscarPorChavePrimaria(idcompra);
         
@@ -30,7 +27,7 @@
             msg = "Registro não encontrado. Verifique.";
         }
         
-    }
+    
 %>
          <h1 class="centro">Exclusão de Compras</h1>
             
