@@ -8,17 +8,12 @@
 <%@page import="dao.ClienteDAO"%>
 <%@include file="cabecalho.jsp"%>
 <%
-if(request.getParameter("txtIdcompra") == null || request.getParameter("selCpf")==null ||request.getParameter("selIsbn")==null )
-{
-    response.sendRedirect("compra.jsp");
-    return;
-}
+
 
             Long idcompra = Long.parseLong(request.getParameter("txtIdcompra"));
             Long cpf = Long.parseLong(request.getParameter("selCpf")); // conversao
             String isbn = request.getParameter("selIsbn");
             BigDecimal preco = new BigDecimal(request.getParameter("txtPrecovenda"));
-            
             String data = request.getParameter("txtData");
             Integer qntd = Integer.parseInt(request.getParameter("txtQntd")); // conversao
 
@@ -34,17 +29,10 @@ if(request.getParameter("txtIdcompra") == null || request.getParameter("selCpf")
             Compra obj = dao.buscarPorChavePrimaria(idcompra);
             //Se não encontrou o registro volta pra listar 
 
-            if(obj == null)
-            {
-                response.sendRedirect("compra.jsp");
-                return;
-            }
-
-
-
             //Atualizar as demais informações enviadas
             Cliente cliente = new Cliente ();
             cliente.setCpf(cpf);
+            
             Livro livro = new Livro ();
             livro.setIsbn(Long.parseLong(isbn));
             // chamo a atualizar

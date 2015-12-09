@@ -2,30 +2,31 @@
 <%@page import="dao.CompraDAO"%>
 <%@include file="cabecalho.jsp"%>
 <%
-    String msg = "";
+    
     if(request.getParameter("Idcompra")==null )
     {
         response.sendRedirect("compra.jsp");
 	return;
     }
-        Long idcompra = Long.parseLong(request.getParameter("Idcompra"));
-         CompraDAO dao = new CompraDAO();
+    Long idcompra = Long.parseLong(request.getParameter("Idcompra"));
+    CompraDAO dao = new CompraDAO();
         //buscar o registro pela chave primária
-        Compra obj = dao.buscarPorChavePrimaria(idcompra);
-        
+    Compra obj = dao.buscarPorChavePrimaria(idcompra);
+    String msg = "";
         //buscar o registro pela chave primária
         
         
         // Excluir o cliente buscado
-        if(obj!=null)
-        {
-            dao.excluir(obj);
-            msg = "Registro excluído com sucesso";
-        }
-        else
-        {
-            msg = "Registro não encontrado. Verifique.";
-        }
+    if(obj!=null)
+    {
+        dao.excluir(obj);
+        msg = "Registro excluído com sucesso";
+    }
+        
+    else
+    {
+        msg = "Registro não encontrado. Verifique.";
+    }
         
     
 %>
