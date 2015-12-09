@@ -42,7 +42,7 @@
             <div>
                 
                 <form action="compra-atualizar-ok.jsp" method="post">
-                    <label>Cupom Fiscal:</label><input type="text" name="txtIdcompra" value="<%=obj.getIdcompra()%>" readonly="readonly"/><br />
+                    <label>Cupom Fiscal:</label><input type="text" name="txtIdcompra" value="<%=obj.getIdcompra()%>" readonly/><br />
                    <%-- o readonly n permite ao usuario tocar nesse campo --%>
                     <label>Preco da venda:</label><input type="text" name="txtPrecovenda" value="<%=obj.getPrecovenda()%>" /><br />
                     <label>Data Hora</label><input type="date" name ="txtData" /><br />
@@ -63,7 +63,7 @@
                                 selected = "selected";
                             }
                         %>
-                        <option value="<%=c.getCpf()%>" ><%=c%> </option>  
+                        <option value="<%=c.getCpf()%>" <%=selected%>><%=c%></option>  
                         <%
                         selected = "";
                         }
@@ -86,7 +86,7 @@
                             }
 
                         %>
-                        <option value="<%=l.getIsbn()%>" ><%=l%> ></option>
+                        <option value="<%=l.getIsbn()%>"<%=selected%>><%=l%></option>
                         <%
                         selected = "";
                         }
